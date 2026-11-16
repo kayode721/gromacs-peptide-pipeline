@@ -1,0 +1,2 @@
+# Optional DSSP PNG plotting only; the MD pipeline uses no Python packages.
+matplotlib>=3.7

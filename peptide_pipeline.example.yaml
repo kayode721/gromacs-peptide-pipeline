@@ -1,0 +1,40 @@
+# Run from the repository root. Relative paths use the launch directory.
+prefix: peptide
+start_at: pdb2gmx
+input_pdb: ./inputs/peptide.pdb
+mdp_dir: ./examples/mdp
+work_parent: ./runs
+copy_input: yes
+
+# Set the force field and matching MDP settings for YOUR system.
+# The original script's default was amber99sb-ildn; the author's current
+# SAA setup uses charmm36-feb2026_cgenff-5.0 with an external force-field folder.
+force_field: amber99sb-ildn
+# gmxlib: /absolute/path/to/parent/of/your/force-field-folder
+water: tip3p
+termini: yes
+# Optional: menu responses captured for this exact structure/force-field/version.
+# pdb2gmx_input: ./inputs/termini.txt
+box_type: cubic
+box_distance: 1.0
+ion_conc: none
+
+gpu_mode: auto
+replicas: 1
+start_index: 1
+# seeds: 107919,115838
+maxwarn: 0
+# Ion preprocessing may warn about net charge before neutralization.
+ion_maxwarn: 1
+stop_after: none
+
+# Default: finish after production MD with peptide.xtc + peptide.tpr.
+postprocess: no
+dssp: no
+dssp_plot: no
+
+# Optional plot settings; used only when DSSP and plotting are enabled.
+python: python3
+dssp_plot_script: input/plot_dssp_states.py
+dssp_duration_ns: 300
+dssp_subsample: 10

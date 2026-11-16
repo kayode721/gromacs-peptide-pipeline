@@ -1,0 +1,19 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+inputs/
+runs/
+*.ff/
+*.xtc
+*.trr
+*.tpr
+*.cpt
+*.edr
+*.gro
+*.log
+*.pdb
+*.itp
+*.top
+# GROMACS backup files
+\#*\#
